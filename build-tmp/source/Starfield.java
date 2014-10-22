@@ -79,53 +79,9 @@ class NormalParticle implements Particle
 }
 class JumboParticle extends NormalParticle
 {
-	int myColor, redColor, greenColor, blueColor;
-	double myX, myY, mySpeed, myAngle;
-	JumboParticle()
-	{
-		myX = 400;
-		myY = 400;
-		myAngle = (Math.random()*2*Math.PI);
-		mySpeed = .4f;
-		redColor = (int)(Math.random()*256);
-		greenColor = (int)(Math.random()*256);
-		blueColor = (int)(Math.random()*256);
-		myColor = color(redColor, greenColor, blueColor);
-
-	}
-	public void move()
-	{
-		myX = (Math.cos(myAngle)* mySpeed) + myX;
-		myY = Math.sin(myAngle) + myY;
-	}
-	public void show()
-	{
-		stroke(myColor);
-		fill(myColor);
-		rect((float)myX, (float)myY, 20, 20);
-	}
-	public void wrap()
-	{
-		if(myX >= 800 || myY >= 800 || myX <= 0 || myY <=0)
-	    {
-	    	myX = 400;
-	    	myY = 400;
-	    	myAngle = (Math.random()*2*Math.PI);
-	    }
-	}
-
-}
-interface Particle
-{
-	public void show();
-	public void move();
-	public void wrap();
-}
-class OddballParticle implements Particle
-{
 	int myColor, redColor, greenColor, blueColor, mySize;
 	double myX, myY, myAngle, mySpeed;
-	OddballParticle()
+	JumboParticle()
 	{
 		myX = 400;
 		myY = 400;
@@ -154,6 +110,52 @@ class OddballParticle implements Particle
 		fill(myColor);
 		ellipse((float)myX, (float)myY, mySize, mySize);
 	}
+	
+	public void wrap()
+	{
+		if(myX >= 800 || myY >= 800 || myX <= 0 || myY <=0)
+	    {
+	    	myX = 400;
+	    	myY = 400;
+	    	myAngle = (Math.random()*2*Math.PI);
+	    }
+	}
+
+}
+interface Particle
+{
+	public void show();
+	public void move();
+	public void wrap();
+}
+class OddballParticle implements Particle
+{
+	int myColor, redColor, greenColor, blueColor;
+	double myX, myY, mySpeed, myAngle;
+	OddballParticle()
+	{
+		myX = 400;
+		myY = 400;
+		myAngle = (Math.random()*2*Math.PI);
+		mySpeed = .4f;
+		redColor = 207;
+		greenColor = 210;
+		blueColor = 250;
+		myColor = color(redColor, greenColor, blueColor);
+
+	}
+	public void move()
+	{
+		myX = (Math.cos(myAngle)* mySpeed) + myX;
+		myY = Math.sin(myAngle) + myY;
+	}
+	public void show()
+	{
+		stroke(myColor);
+		fill(myColor);
+		rect((float)myX, (float)myY, 20, 20);
+	}
+	
 	public void wrap()
 	{
 		if(myX >= 800 || myY >= 800 || myX <= 0 || myY <=0)
