@@ -49,7 +49,7 @@ class NormalParticle implements Particle
 		myX = 400;
 		myY = 400;
 		myAngle = (Math.random()*2*Math.PI);
-		mySpeed = (int)(Math.random()*10);
+		mySpeed = (Math.random()*10);
 		redColor = (int)(Math.random()*256);
 		greenColor = (int)(Math.random()*256);
 		blueColor = (int)(Math.random()*256);
@@ -86,7 +86,7 @@ class JumboParticle extends NormalParticle
 		myX = 400;
 		myY = 400;
 		myAngle = (Math.random()*2*Math.PI);
-		mySpeed = (int)(Math.random()*6);
+		mySpeed = 6;
 		redColor = (int)(Math.random()*256);
 		greenColor = (int)(Math.random()*256);
 		blueColor = (int)(Math.random()*256);
@@ -110,6 +110,7 @@ class JumboParticle extends NormalParticle
 	    {
 	    	myX = 400;
 	    	myY = 400;
+	    	myAngle = (Math.random()*2*Math.PI);
 	    }
 	}
 
@@ -129,7 +130,7 @@ class OddballParticle implements Particle
 		myX = 400;
 		myY = 400;
 		myAngle = (Math.random()*2*Math.PI);
-		mySpeed = (int)(Math.random()*10);
+		mySpeed = 22;
 		redColor = 100;
 		greenColor = 22;
 		blueColor =22;
@@ -159,6 +160,8 @@ class OddballParticle implements Particle
 	    {
 	    	myX = 400;
 	    	myY = 400;
+	    	myAngle = (Math.random()*2*Math.PI);
+
 	    }
 	}
 }
