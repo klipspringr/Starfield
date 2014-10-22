@@ -49,7 +49,7 @@ class NormalParticle implements Particle
 	{
 		stroke(myColor);
 		fill(myColor);
-		ellipse((float)myX, (float)myY, 10, 10);
+		ellipse((float)myX, (float)myY, 7,7);
 	}
 	public void wrap()
 	{
@@ -70,7 +70,7 @@ class JumboParticle extends NormalParticle
 		myX = 400;
 		myY = 400;
 		myAngle = (Math.random()*2*Math.PI);
-		mySpeed = 6;
+		mySpeed = .4;
 		redColor = (int)(Math.random()*256);
 		greenColor = (int)(Math.random()*256);
 		blueColor = (int)(Math.random()*256);
